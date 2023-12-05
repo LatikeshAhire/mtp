@@ -61,9 +61,11 @@ class MetricCounter:
     def save_metrics(self, epoch):
         psnr = np.mean(self.metrics['PSNR'])
         ssim = np.mean(self.metrics['SSIM'])
-        self.saved_metrics.append({"epoch":epoch,"psnr":psnr,"ssim":ssim})
+        loss = np.mean(self.metrics['G_loss'])
+        self.saved_metrics.append({"epoch":epoch,"psnr":psnr,"ssim":ssim,"loss":loss})
     
     def save_val_metrics(self, epoch):
         psnr = np.mean(self.metrics['PSNR'])
         ssim = np.mean(self.metrics['SSIM'])
-        self.saved_val_metrics.append({"epoch":epoch,"psnr":psnr,"ssim":ssim})
+        loss = np.mean(self.metrics['G_loss'])
+        self.saved_val_metrics.append({"epoch":epoch,"psnr":psnr,"ssim":ssim,"loss":loss})
