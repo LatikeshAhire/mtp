@@ -192,7 +192,7 @@ def main(config_path='/kaggle/working/mtp/mtp/config/config.yaml'):
     trainer = Trainer(config, train=train, val=val)
     trainer.train()
     print("***saved metrics****",trainer.metric_counter.saved_metrics)
-    print("***saved metrics****",trainer.metric_counter.saved_val_metrics)
+    print("***saved val metrics****",trainer.metric_counter.saved_val_metrics)
 
 
 if __name__ == '__main__':
